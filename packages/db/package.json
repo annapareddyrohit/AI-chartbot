@@ -1,0 +1,32 @@
+{
+  "name": "@my-app/db",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {
+    "db:local": "turso dev --db-file local.db",
+    "db:push": "drizzle-kit push",
+    "db:generate": "drizzle-kit generate",
+    "db:studio": "drizzle-kit studio",
+    "db:migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.17.2",
+    "@my-app/env": "*",
+    "dotenv": "^17.3.1",
+    "drizzle-orm": "^0.45.2",
+    "libsql": "^0.5.29",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@my-app/config": "*",
+    "drizzle-kit": "^0.31.10",
+    "typescript": "^6.0.2"
+  }
+}
